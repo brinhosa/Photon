@@ -45,7 +45,7 @@ def mirror(url, response):
         #url641=base64.b64encode(url)
         #print(url641.decode('ascii'))
         print(os.path.basename(url))
-        with open(path + os.path.basename(url), 'w+') as out_file:
+        with open(path + os.path.basename(url), 'wb') as out_file:
             print("Writing1")
             print(path)
             print(os.path.basename(url))
@@ -54,7 +54,7 @@ def mirror(url, response):
                 print(os.path.basename(url))
             except Exception as e: print(e)
      
-        with open(path + name + trail, 'w+') as out_file:
+        with open(path + name + trail, 'wb') as out_file:
             print("Writing2")
             out_file.write(response.encode('utf-8'))
             print("--------------------------")
