@@ -37,6 +37,7 @@ def mirror(url, response):
             trail += '?' + url.split('?')[1]
         with open(path + name + trail, 'w+') as out_file:
             out_file.write(response.encode('utf-8'))
+            print(url)
             print(path + name + trail)
             print(response)
 
