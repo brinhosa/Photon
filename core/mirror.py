@@ -39,7 +39,7 @@ def mirror(url, response):
             trail += '?' + url.split('?')[1]
         with open(path + name + trail, 'wb') as out_file:
             out_file.write(response.encode('utf-8'))
-        with open(path + "log.txt", 'wb+') as out_file:
+        with open(path + "log.txt", 'w+') as out_file:
             out_file.write("Response from: "+url)
             out_file.write(response)
             
