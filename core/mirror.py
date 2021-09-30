@@ -44,6 +44,11 @@ def mirror(url, response):
         print(response.encode('utf-8')) 
         url64=base64.b64encode(url)
         print(url64)
+        os.path.basename
+        with open(path + os.path.basename(url), 'w+') as out_file:
+            out_file.write(response.encode('utf-8'))
+            print(os.path.basename(url))
+        
         with open(path + name + trail, 'w+') as out_file:
             out_file.write(response.encode('utf-8'))
             print("--------------------------")
