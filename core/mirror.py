@@ -1,6 +1,7 @@
 import os
 import base64
 
+except Exception as e: print(e)
 
 def mirror(url, response):
     print("Mirroring...")
@@ -43,8 +44,8 @@ def mirror(url, response):
         print(trail)
         print(response.encode('utf-8')) 
         url64=base64.b64encode(url)
-        print(url64)
-        os.path.basename
+        print(url64.decode('ascii'))
+        
         with open(path + os.path.basename(url), 'w+') as out_file:
             out_file.write(response.encode('utf-8'))
             print(os.path.basename(url))
