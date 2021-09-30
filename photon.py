@@ -240,6 +240,8 @@ def extractor(url):
     """Extract details from the response body."""
     response = requester(url, main_url, delay, cook, headers, timeout, host, proxies, user_agents, failed, processed)
     if clone:
+        print(url)
+        print(response)  
         mirror(url, response)
     matches = rhref.findall(response)
     for link in matches:
