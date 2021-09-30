@@ -238,8 +238,10 @@ def remove_file(url):
 
 def extractor(url):
     """Extract details from the response body."""
+    print("Extracting...")
     response = requester(url, main_url, delay, cook, headers, timeout, host, proxies, user_agents, failed, processed)
     if clone:
+        print("Clonning...")
         #print(url)
         #print(response)  
         mirror(url, response)
