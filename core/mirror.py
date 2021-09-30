@@ -2,6 +2,7 @@ import os
 
 
 def mirror(url, response):
+    print("Mirroring...")
     if response != 'dummy':
         clean_url = url.replace('http://', '').replace('https://', '').rstrip('/')
         parts = clean_url.split('?')[0].split('/')
