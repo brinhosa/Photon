@@ -37,30 +37,11 @@ def mirror(url, response):
             name = webpage
         if len(url.split('?')) > 1:
             trail += '?' + url.split('?')[1]
-        print("Response from: "+url)
-        print(path)
-        print(name)
-        print(trail)
-        print(response.encode('utf-8')) 
-        #url641=base64.b64encode(url)
-        #print(url641.decode('ascii'))
-        print(os.path.basename(url))
-        with open(path + os.path.basename(url), 'wb') as out_file:
-            print("Writing1")
-            print(path)
-            print(os.path.basename(url))
-            try:
-                out_file.write(response.encode('utf-8'))
-                print(os.path.basename(url))
-            except Exception as e: print(e)
-     
         with open(path + name + trail, 'wb') as out_file:
-            print("Writing2")
             out_file.write(response.encode('utf-8'))
-            print("--------------------------")
-            print(url)
-            print(path + name + trail)
-            print(response)
-            print("--------------------------")
+        with open(path + "log.txt", 'wb+') as out_file:
+            out_file.write("Response from: "+url)
+            out_file.write(response)
+            
 
             
