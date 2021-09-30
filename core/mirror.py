@@ -1,7 +1,6 @@
 import os
 import base64
 
-except Exception as e: print(e)
 
 def mirror(url, response):
     print("Mirroring...")
