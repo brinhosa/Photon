@@ -1,4 +1,5 @@
 import os
+import base64
 
 
 def mirror(url, response):
@@ -37,7 +38,12 @@ def mirror(url, response):
         if len(url.split('?')) > 1:
             trail += '?' + url.split('?')[1]
         print("Response from: "+url)
-        print(response.encode('utf-8'))    
+        print(path)
+        print(name)
+        print(trail)
+        print(response.encode('utf-8')) 
+        url64=base64.b64encode(url)
+        print(url64)
         with open(path + name + trail, 'w+') as out_file:
             out_file.write(response.encode('utf-8'))
             print("--------------------------")
